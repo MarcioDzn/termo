@@ -1,2 +1,2 @@
-# termo
+# Termo
 Cópia do jogo termo

@@ -1,4 +1,3 @@
-# Verifica do site Dicio.com.br
 def buscarPalavra(lista, chave):
     inicio = 0
     fim = len(lista) -1

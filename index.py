@@ -119,13 +119,22 @@ def verificarAcerto(pal, pal_base, pal_coloridas):
     return continuar_rodada
 
 
-def ajuda():
+def sobreCores():
     os.system('cls')
 
     print(f'{"SIGNIFICADO DAS CORES":^40}')
-    print('\033[;43mLETRA NÃO EXISTE NA PALAVRA\033[m')
-    print('\033[;44mLETRA EXISTE, MAS ESTÁ NA POSIÇÃO ERRADA\033[m ')
-    print('\033[;41mLETRA EXISTE E ESTÁ NA POSIÇÃO CORRETA\033[m\n')
+    print('\033[;43m   \033[m - LETRA NÃO EXISTE NA PALAVRA')
+    print('\033[;44m   \033[m - LETRA EXISTE, MAS ESTÁ NA POSIÇÃO ERRADA ')
+    print('\033[;41m   \033[m - LETRA EXISTE E ESTÁ NA POSIÇÃO CORRETA\n')
+
+
+def ajuda():
+    print('COMO JOGAR')
+    print('1) Uma palavra de 5 letras será sorteada')
+    print('2) O jogador deverá, em 5 tentativas, tentar acertar qual é essa palavra')
+    print('3) A palavra que o jogador chutar terá, em cada letra, uma cor, com os respectivos significados:')
+
+    sobreCores()
 
 
 def jogar():
@@ -133,7 +142,7 @@ def jogar():
     palavra_base = sortearPalavra()
 
     os.system('cls')
-    ajuda()
+    sobreCores()
 
     indice_base = separarLetras(palavra_base)
         
@@ -147,7 +156,7 @@ def jogar():
         palavras_coloridas = processarJogada(palavra, indice_chute, indice_base)
 
         os.system('cls')
-        ajuda()
+        sobreCores()
 
         for palavras in palavras_coloridas:
             print(palavras)
@@ -155,7 +164,6 @@ def jogar():
 
         continuar_rodada = verificarAcerto(palavra, palavra_base, palavras_coloridas)
     
-
 
 def menu():
     opc = 4
@@ -177,7 +185,7 @@ def menu():
 
 os.system('cls')
 menu()
-print("Jogo finalizado!")
+print("\nJogo finalizado!")
 
 
 
